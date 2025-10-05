@@ -22,8 +22,6 @@ class Sach {
     private String tacGia;
     private int namXuatBan;
     private int soLuong;
-
-    // Constructor có tham số
     public Sach(String maSach, String tieuDe, String tacGia, int namXuatBan, int soLuong) {
         this.maSach = maSach;
         this.tieuDe = tieuDe;
@@ -31,8 +29,6 @@ class Sach {
         this.namXuatBan = namXuatBan;
         this.soLuong = soLuong;
     }
-
-    // Constructor không tham số
     public Sach() {
         this.maSach = "";
         this.tieuDe = "";
@@ -40,8 +36,6 @@ class Sach {
         this.namXuatBan = 0;
         this.soLuong = 0;
     }
-
-    // Getter và Setter
     public String getMaSach() {
         return maSach;
     }
@@ -81,8 +75,6 @@ class Sach {
     public void setSoLuong(int soLuong) {
         this.soLuong = soLuong;
     }
-
-    // Phương thức hiển thị thông tin sách
     public void hienThiThongTin() {
         System.out.println("Mã Sách: " + maSach);
         System.out.println("Tiêu Đề: " + tieuDe);
