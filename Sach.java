@@ -1,3 +1,5 @@
+package BaiTHtuan5;
+
 public class Sach {
     private String maSach;
     private String tieuDe;
@@ -55,6 +57,15 @@ public class Sach {
         this.soLuong = soLuong;
     }
 
+    @Override
+    public String toString() {
+        return "Mã sách: " + maSach +
+               "\nTiêu đề: " + tieuDe +
+               "\nTác giả: " + tacGia +
+               "\nNăm xuất bản: " + namXuatBan +
+               "\nSố lượng: " + soLuong;
+    }
+    
     public void hienThiThongTin() {
         System.out.println("---------------------------------");
         System.out.println("Thông tin chi tiết về cuốn sách:");
@@ -63,6 +74,7 @@ public class Sach {
         System.out.println("Tác giả: " + this.tacGia);
         System.out.println("Năm xuất bản: " + this.namXuatBan);
         System.out.println("Số lượng: " + this.soLuong);
+        System.out.println("Thông tin chi tiết về cuốn sách:" + this.toString());
         System.out.println("---------------------------------");
     }
 }
