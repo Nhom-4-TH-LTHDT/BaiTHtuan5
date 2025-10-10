@@ -1,20 +1,43 @@
+package BaiTHtuan5;
+
 public class Test {
     public static void main(String[] args) {
-        System.out.println("Tạo đối tượng sách thứ nhất:");
-        Sach sach1 = new Sach("S001", "Lập trình Java cơ bản", "Nguyễn Văn A", 2023, 150);
-        sach1.hienThiThongTin();
+        QuanLySach quanLy = new QuanLySach();
 
-        System.out.println("\nTạo đối tượng sách thứ hai:");
-        Sach sach2 = new Sach();
-        sach2.setMaSach("S002");
-        sach2.setTieuDe("Kỹ thuật lập trình hướng đối tượng");
-        sach2.setTacGia("Lê Thị B");
-        sach2.setNamXuatBan(2022);
-        sach2.setSoLuong(200);
-        sach2.hienThiThongTin();
+        System.out.println("----- THÊM SÁCH VÀO DANH SÁCH -----");
 
-        System.out.println("\nCập nhật số lượng sách S001:");
-        sach1.setSoLuong(160);
-        sach1.hienThiThongTin();
+        SachGiaoTrinh s1 = new SachGiaoTrinh("GT01", "Cơ sở dữ liệu", "Phạm Văn C", 2021, 50, "Cơ sở dữ liệu", "Đại học");
+        quanLy.themSach(s1);
+
+        SachTieuThuyet s2 = new SachTieuThuyet("TT01", "Đắc nhân tâm", "Dale Carnegie", 1936, 100, "Phát triển bản thân", false);
+        quanLy.themSach(s2);
+
+        SachGiaoTrinh s3 = new SachGiaoTrinh("GT02", "Giải tích 1", "Trần Đình D", 2020, 75, "Toán học", "Đại học");
+        quanLy.themSach(s3);
+
+        SachTieuThuyet s4 = new SachTieuThuyet("TT02", "Harry Potter: Hòn đá phù thủy", "J.K. Rowling", 1997, 120, "Huyền ảo", true);
+        quanLy.themSach(s4);
+
+        quanLy.hienThiDanhSachSach();
+
+        System.out.println("\n----- TÌM KIẾM SÁCH -----");
+        String maCanTim = "TT01";
+        Sach sachTimThay = quanLy.timKiemSach(maCanTim);
+        if (sachTimThay != null) {
+            System.out.println("Tìm thấy sách có mã " + maCanTim + ":");
+            sachTimThay.hienThiThongTin();
+        } else {
+            System.out.println("Không tìm thấy sách có mã " + maCanTim);
+        }
+
+        System.out.println("\n----- CẬP NHẬT SỐ LƯỢNG -----");
+        quanLy.capNhatSoLuong("GT01", 60);
+
+        quanLy.hienThiDanhSachSach();
+
+        System.out.println("\n----- XOÁ SÁCH -----");
+        quanLy.xoaSach("GT02");
+
+        quanLy.hienThiDanhSachSach();
     }
 }
