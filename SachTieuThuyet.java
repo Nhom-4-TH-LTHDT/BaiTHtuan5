@@ -1,25 +1,25 @@
 public class SachTieuThuyet extends Sach {
-    private String theLoai;
-    private boolean laSachSeries;
-    public SachTieuThuyet(String maSach, String tenSach, String tacGia, int namXuatBan,
-                          String theLoai, boolean laSachSeries) {
-        super(maSach, tenSach, tacGia, namXuatBan); 
+    private final String theLoai;
+    private final boolean laSachSeries;
+
+    public SachTieuThuyet(String maSach, String tieuDe, String tacGia, int namXuatBan, int soLuong, String theLoai, boolean laSachSeries) {
+        super(maSach, tieuDe, tacGia, namXuatBan, soLuong);
         this.theLoai = theLoai;
         this.laSachSeries = laSachSeries;
     }
-    public String getTheLoai() {
-        return theLoai;
-    }
-    public boolean isLaSachSeries() {
-        return laSachSeries;
-    }
+
     @Override
     public String toString() {
         String seriesStatus = laSachSeries ? "Có" : "Không";
-        return "Sách Tiểu Thuyết {" +
-               super.toString() +
-               ", Thể loại: " + theLoai +
-               ", Thuộc Series: " + seriesStatus +
-               "}";
+        return super.toString() +
+               "\nThể loại: " + theLoai +
+               "\nLà sách series: " + seriesStatus;
+    }
+    
+    @Override
+    public void hienThiThongTin() {
+        System.out.println("--- THÔNG TIN SÁCH TIỂU THUYẾT ---");
+        System.out.println(this.toString());
+        System.out.println("---------------------------------");
     }
 }
